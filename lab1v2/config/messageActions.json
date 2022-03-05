@@ -1,0 +1,5 @@
+{
+  "send": "send",
+  "login": "login",
+  "disconnect": "disconnect"
+}
