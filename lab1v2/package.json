@@ -1,0 +1,19 @@
+{
+  "name": "lab1v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev:server": "nodemon ./server.js",
+    "dev:client": "nodemon ./client.js",
+    "start:server": "node ./server.js",
+    "start:client": "node ./client.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
