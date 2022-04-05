@@ -1,0 +1,101 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.spinner {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+
+  &__light {
+    border: 10px solid $bg-main;
+    border-top: 10px solid $secondary-main;
+    animation: spin-light 1s linear infinite;
+  }
+
+  &__dark {
+    border: 10px solid $bg-main;
+    border-top: 10px solid $primary-main;
+    animation: spin-dark 1s linear infinite;    
+  }
+}
+
+@keyframes spin-light {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    border-top-color: $secondary-light;
+  }
+  60% {
+    border-top-color: $secondary-light;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes spin-dark {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    border-top-color: $primary-light;
+  }
+  60% {
+    border-top-color: $primary-light;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 0px;
+  height: 16px;
+  border-radius: $sm-radius;
+
+  animation: load 1.5s none infinite;
+
+  &_light {
+    background-color: $secondary-main;
+  }
+
+  &_plain {
+    background-color: $bg-shadow;
+  }
+
+  &_dark {
+    background-color: $primary-main;
+  }
+
+  &_white {
+    background-color: $contrast;
+  }
+
+  &__wrapper {
+    width: 80px;
+    border-radius: $sm-radius;
+
+    &_dark {
+      border: 1px solid $primary-main;
+    }
+
+    &_light {
+      border: 1px solid $secondary-light;
+    }
+
+    &_plain {
+      border: 1px solid $bg-main;
+    }
+  }
+}
+
+@keyframes load {
+  50% {
+    width: 80px;
+  }
+  100% {
+    width: 0;
+  }
+}

@@ -1,0 +1,202 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.indicator {
+  display: flex;
+  position: relative;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+
+  &__ellipse {
+    z-index: 5;
+    path {
+      z-index: 5;
+    }
+  }
+
+  &__cursor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    margin: 0 0 0 25px;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  &__panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    height: 100%;
+    width: 100%;
+
+    border-radius: 100%;
+  }
+  
+  &__text {
+    &_start {
+      position: absolute;
+      bottom: 115px;
+      left: 190px;
+      font-weight: 700;
+      color: $bg-overlay;
+    }
+
+    &_good {
+      position: absolute;
+      bottom: auto;
+      margin: 35px 0 0 0;
+      left: 90px;
+      font-weight: 700;
+      color: $primary-main;
+    }
+  
+    &_warning {
+      position: absolute;
+      top: 180px;
+      left: 115px;
+      font-weight: 700;
+      color: $secondary-main;
+    }
+
+    &_danger {
+      position: absolute;
+      margin: 0 0 0 30px;
+      bottom: 85px;
+      left: auto;
+      font-weight: 700;
+      color: $error-main;
+    }
+  }
+
+  @media (max-width: 660px) {
+    width: 300px;
+    height: 300px;
+
+    &__cursor {
+      width: 200px;
+      height: 200px;
+      margin: 0 0 0 10px;
+    }
+
+    &__text {
+      &_start {
+        bottom: 50px;
+        left: 80px;
+        font-size: $sm-font;
+      }
+
+      &_good {
+        margin: 20px 0 0 0;
+        left: 30px;
+        font-size: $sm-font;
+      }
+
+      &_warning {
+        top: 85px;
+        left: 35px;
+        font-size: $sm-font;
+      }
+
+      &_danger {
+        margin: 0 0 0 20px;
+        bottom: 30px;
+        font-size: $sm-font;
+      }
+    }
+  }
+}
+
+.scroller {
+  &_good {
+    background: $primary-light;
+  }
+
+  &_warning {
+    background: $secondary-light;
+  }
+
+  &_danger {
+    background: $error-light;
+  }
+
+  &_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    height: 100%;
+    width: inherit;
+    bottom: 0;
+    left: 100%;
+    transform-origin: center left;
+  }
+
+  &_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $error-light;
+
+    position: absolute;
+    height: 100%;
+    width: inherit;
+    top: 0;
+    right: 100%;
+    transform-origin: center right;
+  }
+
+  &__overflow {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    background: #fff;
+
+    border-radius: 100%;
+
+    &_left {
+      right: 20px;
+    }
+
+    &_right {
+      left: 20px;
+    }
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+    width: 200px;
+    height: 100%;
+    background-color: $contrast;
+  }
+
+  @media (max-width: 660px) {
+    &__wrapper {
+      width: 100px;
+    }
+
+    &__overflow {
+      width: 180px;
+      height: 180px;
+      
+      &_left {
+        right: 10px;
+      }
+  
+      &_right {
+        left: 10px;
+      }
+    }
+  }
+}

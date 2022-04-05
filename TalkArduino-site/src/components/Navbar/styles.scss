@@ -1,0 +1,234 @@
+@import "../../styles/colors.scss";
+@import '../../styles/spacing.scss';
+
+.navbar {
+  display: inline-flex;
+  position: sticky;
+  z-index: 10;
+  background: $primary-main;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  padding: $xs-space;
+
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+    padding: $xs-space;
+  }
+
+  &__title {
+    margin: 0 0 0 $md-space;
+    color: $contrast;
+    font-size: $lg-space;
+    font-weight: 700;
+  }
+
+  &__logo-icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  &__menu-icon {
+    display: none;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 $md-space 0 0;
+    color: $contrast;
+  }
+
+  &__pages {
+    display: inline-flex;
+    position: absolute;
+    top: 100%;
+  }
+
+  &__account {
+    margin: 0 $md-space 0 0;
+    padding: 0;
+  }
+
+  &__button {
+    padding: $sm-space;
+  }
+
+  @media (max-width: 1000px) {
+    &__account {
+      margin: 0;
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__pages {
+      display: none;
+    }
+
+    &__menu-icon {
+      display: inline-block;
+    }
+
+    &__logo-icon {
+      display: none;
+    }
+  }  
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+  // width: 0;
+  // opacity: 0;
+  // transition: opacity 1s;
+
+  position: fixed;
+  background: $primary-main;
+  top: 0;
+  left: 0;
+  
+  &__disable {
+    animation: hide-menu 0.5s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  &__active {
+    // opacity: 1;
+    bottom: 0;
+    animation: show-menu 0.5s linear normal;
+    animation-fill-mode: forwards;
+    padding: $sm-space;
+  }
+
+  &__button {
+    &:nth-child(n) {
+      margin: $md-space 0 0 0;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $contrast;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes hide-menu {
+  0% {
+    width: 250px;
+    bottom: 0;
+  }
+  99% {
+    bottom: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 250px;
+  }
+}
+//   display: flex;
+//   position: fixed;
+//   left: 0;
+//   bottom: 0;
+//   top: 0;
+//   flex-direction: column;
+//   background-color: $primary-main;
+//   justify-content: space-between;
+//   padding: $lg-space $md-space;
+//   transition: width 1s, opacity 1s, padding 0.5s;
+//   z-index: 3;
+
+//   &__disabled {
+//     width: 0px;
+//     padding: 0;
+//     opacity: 0;
+//   }
+
+//   &__active {
+//     width: 250px;
+//   }
+
+//   &__button {
+//     &_bottom {
+//       white-space: nowrap;
+//     }
+//   }
+
+// }
+
+
+// .menu-item {
+//   &__active {
+//     animation: fadein 1s;
+//     margin: $sm-space 0;
+//   }
+
+//   &__disable {
+//     display: none;
+//   }
+// }
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: $bg-overlay;
+  // opacity: 1;
+  // transition: opacity 5s;
+  
+  &__disable {
+    animation: hide-overlay 0.5s linear alternate;
+    animation-fill-mode: forwards;
+  }
+
+  &__active {
+    bottom: 0;
+    right: 0;
+    animation: show-overlay 0.5s linear alternate;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes hide-overlay {
+  0% {
+    opacity: 1;
+    bottom: 0;
+    right: 0;
+  }
+  99% {
+    bottom: 0;
+    right: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes show-overlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

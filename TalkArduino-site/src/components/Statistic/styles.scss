@@ -1,0 +1,97 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.card {
+  width: 300px;
+  border-radius: $sm-radius;
+  background: $contrast;
+  border: 1px solid $bg-dark;
+  padding: $inner-space;
+  position: relative;
+  display: flex;
+  align-self: stretch;
+  text-align: left;
+}
+
+.card__indicator {
+  position: absolute;
+  z-index: 2;
+  width: $xs-space;
+  left: 0;
+  top: $inner-space;
+  bottom: $inner-space;
+  border-radius: 0 $sm-radius $sm-radius 0;
+
+  &_good {
+    background-color: $primary-main;
+  }
+
+  &_warning {
+    background-color: $secondary-main;
+  }
+
+  &_danger {
+    background-color: $error-main;
+  }
+
+  &_disabled {
+    background-color: $bg-dark;
+  }
+}
+
+.text__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.title {
+  font-size: $sm-font;
+  text-transform: uppercase;
+  font-weight: 900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: $md-space;
+}
+
+.description {
+  font-size: $xs-font;
+  font-weight: normal;
+  color: $bg-overlay;
+  flex: 1;
+  line-height: $md-space;
+  margin-top: $xs-space;
+  word-wrap: normal;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Nunito';
+  font-size: $xxl-font;
+  text-transform: uppercase;
+  padding-left: $inner-space;
+  padding-right: $inner-space;
+
+  &_good {
+    color: $primary-main;
+  }
+
+  &_warning {
+    color: $secondary-main;
+  }
+
+  &_danger {
+    color: $error-main;
+  }
+}
+
+.value__wrapper {
+  display: flex;
+  flex-shrink: 0;
+  line-height: 45px;
+  height: 45px;
+}

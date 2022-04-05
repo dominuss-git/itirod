@@ -1,0 +1,61 @@
+@import "../../styles/colors.scss";
+@import '../../styles/spacing.scss';
+
+.toggle {
+  position: relative;
+  height: 21px;
+  width: 34px;
+  margin: 0 $xs-space;
+
+  &__checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $primary-light;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  &__slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: $xs-space;
+    bottom: $xs-space;
+    background-color: $contrast;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  &__round {
+    border-radius: 34px;
+  }
+  
+  &__round:before {
+    border-radius: 50%;
+  }
+
+  &__checkbox:checked + &__slider {
+    background-color: $secondary-main;
+  }
+
+  &__checkbox:focus + &__slider {
+    box-shadow: 0 0 1px $secondary-main;
+  }
+
+  &__checkbox:checked + &__slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+  }
+}

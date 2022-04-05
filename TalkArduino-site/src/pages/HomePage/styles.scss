@@ -1,0 +1,65 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.home {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  -webkit-box-shadow: 0px 0px 100px 40px rgba(0, 0, 0, 0.8) inset;;
+  -moz-box-shadow: 0px 0px 100px 40px rgba(0, 0, 0, 0.8) inset;;
+  box-shadow: 0px 0px 100px 40px rgba(0, 0, 0, 0.8) inset;
+
+  background-image: url('../../assets/meteo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  &__title {
+    color: $contrast;
+    font-size: $lg-font;
+  }
+
+  &__info {
+    display: flex;
+    padding: $md-space;
+    color: $contrast;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      text-align: justify;
+      background-color: $bg-shadow;
+      margin: $md-space 0 0 0;
+
+      -webkit-box-shadow: 0 0 $lg-space $sm-space $bg-shadow;
+      -moz-box-shadow: 0 0 $lg-space $sm-space $bg-shadow;
+      box-shadow: 0 0 $lg-space $sm-space $bg-shadow;
+    }
+
+    @media (max-width: 360px) {
+      padding: $sm-space !important;
+    }
+  }
+
+  &__wrapper {
+    justify-content: space-between;
+    padding: $md-space;
+    overflow-y: scroll;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 420px) {
+    &__wrapper {
+      padding: $md-space 0;
+    }
+  }
+}

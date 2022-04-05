@@ -1,0 +1,42 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/spacing.scss";
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding: $md-space;
+  background: $primary-main;
+  border-radius: $md-radius;
+
+  @media (max-width: 360px) {
+    padding: $sm-space !important;
+  }
+
+  &__title {
+    text-align: center;
+    color: $contrast;
+  }
+
+  &__input {
+    &:nth-child(odd) {
+      margin: $md-space 0 0 0;
+    }
+
+    input {
+      width: 140px;
+    }
+  }
+
+  &__button {
+    padding: $sm-space;
+    font-size: $sm-font;
+    margin: 0 $md-space 0 0;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: end;
+    margin: $md-space 0 0 0;
+  }
+}

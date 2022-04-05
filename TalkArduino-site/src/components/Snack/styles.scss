@@ -1,0 +1,67 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.snackbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: fixed;
+  bottom: $lg-space;
+  right: $sm-space;
+  overflow: hidden;
+}
+
+.snack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 250px;
+  justify-content: center;
+  color: $contrast;
+  text-align: center;
+  border-radius: $md-radius;
+  padding: $sm-space $lg-space;
+  z-index: 1;
+  margin: $sm-space * 0.1;
+  animation: fadein 1s;
+
+  &__hide {
+    transition: 1s;
+    opacity: 0;
+  }
+
+  &__success {
+    background-color: $primary-main;
+  }
+
+  &__info {
+    background-color: $secondary-main;
+  }
+
+  &__error {
+    background-color: $error-main;
+  }
+
+  &__content {
+    font-size: 14px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

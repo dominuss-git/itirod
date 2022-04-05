@@ -1,0 +1,60 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.modal {
+  &__container {
+    position: relative;
+    border-radius: $sm-radius;
+    padding: $md-space;
+    box-sizing: border-box;
+    min-width: 500px;
+  }
+
+  &__primary {
+    background-color: $primary-main;
+  }
+
+  &__secondary {
+    background-color: $secondary-main;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    background-color: $bg-overlay;
+    z-index: 2;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    color: $contrast;
+  }
+  
+  &__content {
+    display: flex;
+    justify-content: center;
+    margin: $sm-space;
+  }
+
+  &__cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: $sm-space;
+    right: $sm-space;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: $contrast;
+  }
+}
