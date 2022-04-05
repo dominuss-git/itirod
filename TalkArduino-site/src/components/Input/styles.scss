@@ -1,0 +1,59 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.input {
+  flex: 1;
+  border: none;
+  padding: $sm-space $md-space;
+  box-sizing: border-box;
+  background-color: $bg-dark;
+
+  &__primary-light {
+    color: $contrast;
+    background-color: $primary-light;
+  }
+
+  &__primary {
+    color: $contrast;
+    background-color: $primary-main;
+  }
+
+  &__secondary-light {
+    background-color: $secondary-light;
+  }
+
+  &__secondary {
+    color: $contrast;
+    background-color: $secondary-main;
+    // border-right: 3px solid $primary-main !important;
+
+    &:focus-visible {
+      outline: 3px solid $primary-main !important;
+    }
+    
+  }
+
+
+  &__wrapper {
+    padding: 0 $sm-space;
+    display: flex;
+    border-radius: $sm-radius $md-radius $md-radius $sm-radius;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: space-between;
+    border-right: 3px solid $secondary-main;
+  }
+
+  &__title {
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: 0 $sm-space 0 0;
+    // color: $contrast;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $secondary-main;
+    transition: 1s;
+  }  
+
+}

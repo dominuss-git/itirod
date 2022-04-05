@@ -1,0 +1,153 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.button {
+  display: inline-block;
+  border: none;
+  color: $contrast;
+  border-radius: $sm-radius;
+  padding: $sm-space $lg-space;
+  text-align: center;
+  text-decoration: none;
+  font-size: $md-font;
+  text-transform: uppercase;
+  font-weight: bolder;
+  transition: 0.5s;
+
+  &__primary {
+    background-color: $primary-main;
+
+    &.active {
+      background-color: $secondary-main !important;
+    }
+    
+    &:hover {
+      background-color: $secondary-main;
+    }
+  }
+
+  &__plain {
+    background-color: unset !important;
+    position: relative;
+
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $contrast;
+      content: "";
+      transition: width 0.5s ease-out;
+    }
+
+    &:hover {
+      border-radius: unset !important;
+
+      &:after {
+        width: 100%
+      }
+    }
+  }
+
+  &__light {
+    background-color: $primary-light;
+
+    &.active {
+      background-color: $secondary-main !important;
+    }
+    
+    &:hover {
+      background-color: $secondary-main;
+    }
+  }
+
+  &__secondary {
+    background-color: $secondary-main;
+
+    &.active {
+      background-color: $primary-main !important;
+    }
+    
+    &:hover {
+      background-color: $primary-main;
+    }
+  }
+
+  &__warning {
+    background-color: $error-main;
+  }
+
+  &.active {
+    border-radius: $md-radius !important;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-radius: $md-radius;
+  }
+}
+
+.menu-button {
+  display: inline-block;
+  border: none;
+  color: $contrast;
+  border-radius: 0 0 $md-radius $md-radius;
+  padding: $sm-space $lg-space;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 $sm-space;
+  font-size: $md-font;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-weight: bolder;
+
+  &__primary {
+    background-color: $primary-main;
+    
+    &.active {
+      background-color: $secondary-main !important;
+    }
+
+    &:hover {
+      background-color: $secondary-main;
+    }
+  }
+
+  &__light {
+    background-color: $primary-light;
+    
+    &.active {
+      background-color: $secondary-main !important;
+    }
+
+    &:hover {
+      background-color: $secondary-main;
+    }
+  }
+
+  &__secondary {
+    background-color: $secondary-main;
+
+    &.active {
+      background-color: $primary-main !important;
+    }
+    
+    &:hover {
+      background-color: $primary-main;
+    }
+  }
+
+  &__warning {
+    background-color: $error-main;
+  }
+
+  &.active {
+    padding: $lg-space $lg-space $sm-space $lg-space !important;
+  }
+
+  &:hover {
+    cursor: pointer;
+    padding: $lg-space $lg-space $sm-space $lg-space;
+  }
+}

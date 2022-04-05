@@ -1,0 +1,41 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacing.scss";
+
+.graphic {
+  &__main {
+    margin: $md-space 0 0 0;
+    -webkit-box-shadow: 0 0 $lg-space $sm-space $bg-shadow;
+    -moz-box-shadow: 0 0 $lg-space $sm-space $bg-shadow;
+    box-shadow: 0 0 $lg-space $sm-space $bg-shadow;
+  }
+
+  &__button-wrapper {
+    padding: $md-space;
+  }
+
+  &__button {
+    &:nth-child(n) {
+      margin: 0 0 0 $md-space;
+    }
+
+    @media (max-width: 660px) {
+      font-size: $sm-font;
+      padding: $sm-space $md-space;
+    }
+
+    @media (max-width: 520px) {
+      font-size: $xs-font;
+      padding: $sm-space;
+
+      &:nth-child(n) {
+        margin: 0 0 0 $xs-space;
+      }
+    }
+  }
+
+  &__loader {
+    display: flex;
+    align-items: center;
+    height: 500px !important;
+  }
+}

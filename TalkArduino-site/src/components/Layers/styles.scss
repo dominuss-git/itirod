@@ -1,0 +1,19 @@
+@import "../../styles/spacing.scss";
+
+.layer {
+  &__horizontal {
+    &_center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+}

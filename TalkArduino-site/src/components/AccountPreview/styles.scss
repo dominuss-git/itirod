@@ -1,0 +1,83 @@
+@import "../../styles/colors.scss";
+@import '../../styles/spacing.scss';
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 0;
+  z-index: 3;
+  // opacity: 0;
+  // transition: opacity 1s;
+
+  position: fixed;
+  background: $primary-main;
+  top: 0;
+  right: 0;
+  
+  &__disable {
+    animation: hide-preview 0.5s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  &__active {
+    // opacity: 1;
+    bottom: 0;
+    animation: show-preview 0.5s linear normal;
+    animation-fill-mode: forwards;
+    padding: $sm-space;
+  }
+
+  &__info {
+    margin: $lg-space 0 0 0;
+  }
+
+  &__tab-wrapper {
+    display: flex;
+    white-space: nowrap;
+    color: $contrast;
+    margin: $md-space 0 0 0;
+
+    &_language {
+      color: $secondary-main;
+      display: flex;
+      margin: 0 0 0 $xs-space;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $contrast;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes hide-preview {
+  0% {
+    width: 300px;
+    bottom: 0;
+    padding: $sm-space;
+  }
+  99% {
+    bottom: 0;
+    padding: $sm-space;
+  }
+  100% {
+    width: 0;
+    padding: 0;
+  }
+}
+
+@keyframes show-preview {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 300px;
+  }
+}
